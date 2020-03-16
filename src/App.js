@@ -1,24 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Box, Container } from '@material-ui/core';
+import MediaPlayer from './components/MediaPlayer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container maxWidth="lg">
+        <h1 style={{ textAlign: 'center', color: '#3FA9E0' }}>React Material-ui starter</h1>
+        <div style={{ display: 'flex', height: '80vh' }}>
+          <Box style={{ margin: 'auto' }} color="text.primary">
+            <MediaPlayer
+              onPlay={() => window.open('https://www.youtube.com/watch?v=9nZ6w9JvQl0', '_blank')}
+            />
+          </Box>
+        </div>
+      </Container>
     </div>
   );
 }
